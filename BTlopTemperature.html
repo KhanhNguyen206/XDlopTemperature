@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BtlopTemperature</title>
+</head>
+<body>
+<script>
+    function temperature(degreeC) {
+        this.degreeC= degreeC;
+        this.degreeF= function () {
+            if(degreeC<-273) return "Vượt quá giới hạn";
+            return (9*degreeC)/5+32;
+        };
+        this.degreeK= function () {
+            if(degreeC<-273) return "Vượt quá giới hạn";
+            return (degreeC+273.15)
+        };
+    }
+    let DegreeC= new temperature(30);
+    document.write("Độ C chuyển sang độ F:" +DegreeC.degreeF());
+    document.write("<br>");
+    document.write("Độ C chuyển sang độ K:" +DegreeC.degreeK());
+</script>
+</body>
+</html>
